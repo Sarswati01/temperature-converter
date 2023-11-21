@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temp converter</title>
+    <style>
+      body {
+          font-family: Arial, sans-serif;
+          text-align: center;
+          margin: 50px;
+      }
+
+      #container {
+          display: inline-block;
+          text-align: center;
+          background-color:bisque;
+          padding: 20px;
+          border-radius: 10px;
+          width:99%;
+
+         
+      }
+
+      .input-div {
+          margin-bottom: 15px;
+          display: inline-block;
+          margin:10px ;
+          font-size:20px ;
+         
+         
+
+      }
+  </style>
+</head>
+<body>
+  <h2>Temperature Converter</h2>
+  <div id="container">
+      <div class="input-div">
+          <label for="celsius">Celsius:</label><br>
+          <input type="number" id="celsius" class="temperature" placeholder="Enter temperature in Celsius"><br>
+      </div>
+
+      <div class="input-div">
+          <label for="fahrenheit">Fahrenheit:</label><br>
+          <input type="number" id="fahrenheit" class="temperature" placeholder="Enter temperature in Fahrenheit">
+      </div>
+
+      
+
+
+     
+  </div>
+  <script>
+        var celsius = document.getElementById("celsius");
+            var fahrenheit = document.getElementById("fahrenheit");
+
+            celsius.addEventListener('input',function(){
+              let c= this.value;
+              let f=(c*9/5)+32;
+              if(!Number.isInteger(f)){
+                f=f.toFixed(4);
+              }
+              fahrenheit.value=f;
+
+            });
+            fahrenheit.addEventListener('input',function(){
+              let f= this.value;
+              let c=(f-32)*5/9;
+              if(!Number.isInteger(c)){
+                c=c.toFixed(4);
+              }
+              celsius.value=c;
+
+            });
+
+
+  </script>
+</body>
+</html>
